@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+	
+		<!-- Regular data -->
+        	<meta charset="utf-8">
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+		
+		<!-- Description -->
+		<meta name="author" content="Jayesh Kaithwas">
+		<meta name="keywords" content="jayesh,kaithwas,jayesh kaithwas,kaithwas jayesh,portfolio,design,branding,experience,iOS,front-end developer,freelance,interface">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Title -->
+		<title>JK || Front-End Developer</title>
+		<!-- CSS -->
+		<link href="skstyle.css" rel="stylesheet" type="text/css">
+		
+		<!-- Font Family -->
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    </head>
+    <body>
+    	<div class="row">			
+		<div id="myCanvasContainer">		
+			<div class="content">
+				<div class="random">
+					<span class="str ltr">0</span>
+					<span class="str ltr">0</span>
+					<span class="str ltr">0</span>
+					<span class="str ltr">0</span>
+					<span class="str ltr">0</span>
+					<span class="str ltr">0</span>		
+				</div>
+			</div>
+		
+			<script>
+				$(document).ready(function()
+				{
+		        		var $randomString = $(".str");
+		        		var $timer = 20;
+		        		var $it ;
+		        		var $data = 0;
+		        		var $index;
+        				var $change;
+        				var $letters = ["S","K","I","L","L","S"];
+       			  
+			        	$randomString.each(function()
+			        	{
+			        		$change = Math.round(Math.random()*100);
+			        		$(this).attr('data-change', $change)
+		        		});
+				        
+					function random()
+			        	{
+			        		return Math.round(Math.random()*9);
+       					}
+       						
+       					function select()
+       					{
+			  		        return Math.round(Math.random()*$randomString.length+1);
+       					}
+				
+			        	function value()
+			        	{
+					        $(".str:nth-child("+select()+")").html(''+random()+'');
+					        $(".str:nth-child("+select()+")").attr('data-number', $data);
+					        $data++;
+					        $randomString.each(function()
+					        {
+					        	if (parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change')) ) 	
+					        	{
+		  			        	      $index = $('.ltr').index(this);
+					        	      $(this).html($letters[$index]);
+					        	      $(this).removeClass('str');
+           						}
+         					});
+        				};
+        				$it = setInterval(value, $timer);
+      				}); 		
+			</script>		
+		</div>	
+    	</div>
+    	
+	<!--------------------------S I D E S--------------------------> 
+    	<div class="sides">
+	    	<!------------S I D E - A   S T A R T S--------------->
+    		<div class="side-ab">
+    			<div class="skills-details">
+
+				<div class= "chart">
+					<span>HTML & CSS</span>
+					<footer>
+						<div data-width="75%" style="background: rgb(255, 34, 83) none repeat scroll 0% 0%; width: 95%;"></div>
+					</footer>
+				</div>
+				<div class= "chart">
+					<span>Java</span>
+					<footer>
+						<div data-width="75%" Style="width:95%"></div>
+					</footer>
+				</div>
+				<div class= "chart">
+					<span>C Language</span>
+					<footer>
+						<div data-width="85%" style="background: rgb(255, 34, 83) none repeat scroll 0% 0%; width: 75%;"></div>
+					</footer>
+				</div>
+				<div class= "chart">
+					<span>C++</span>
+					<footer>
+						<div data-width="75%" style="width:90%"></div>
+					</footer>
+				</div>
+				<div class= "chart">
+					<span>Python</span>
+					<footer>
+						<div data-width="75%" style="background: rgb(255, 34, 83) none repeat scroll 0% 0%; width: 85%;"></div>
+					</footer>
+				</div>
+				<div class ="chart">
+					<span>MySQL</span>
+					<footer>
+						<div data-width="95%" style="width:75%;"></div>
+					</footer>
+				</div>
+			</div>	
+    		</div>
+    		<!---------------------------------------------------->
+    		
+    		<!------------S I D E - B   S T A R T S--------------->
+    		<div class="side-ab">
+    			<p id= "paragh" align= "justify">I create successful responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS, building small and medium web apps, custom plugins, features, animations, and coding interactive layouts.</p>
+    			<div>
+    				<h1>Certificates</h1>
+    				<ul>
+    					<li style="color: #00ff41;"><b><u>Star certificates</u></b></li>
+    					<li>Star C Programming</li>
+    					<li>Star C++ Programming</li>
+    					<li>Star Html</li>
+    					<li>IT - Essential</li>
+    					<li>Star Cyber Secure User - R11</li>
+    					<li style="color: #00ff41;"><b><u>Udemy</u></b></li>
+    					<li>Google BigQuery & PostgreSQL : Big Query for Data Analysis</li>
+    					<li>Computer Hardware, Operating System and Networking</li>
+    					<li>Pyhton Programming</li>
+    					<li>Network Ethical Hacking(Kali-Hands-on)</li>
+    					<li>Practical Web Development</li>
+    				</ul>
+    			</div>
+    		</div>
+    		
+    		
+    		<!---------------------------------------------------->
+    	</div>
+    	<!---------------------------------------------------->
+    </body>
+</html> 
+    
