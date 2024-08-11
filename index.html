@@ -69,13 +69,6 @@
         text-transform: none
       }
 
-      [type=button],
-      [type=reset],
-      [type=submit],
-      button {
-        -webkit-appearance: button
-      }
-
       [type=button]::-moz-focus-inner,
       [type=reset]::-moz-focus-inner,
       [type=submit]::-moz-focus-inner,
@@ -560,6 +553,15 @@
       }
 
       @media screen and (max-width:500px) {
+        #waifu{
+          display:none;
+        }
+        .about[data-v-0020ee1f] {
+          float: none !important;
+        }
+        h2[data-v-0020ee1f]{
+          margin-left: 0px !important;
+        }
         nav[data-v-9b59b55a] {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -2512,11 +2514,13 @@
         padding: 40px 40px 80px;
         background: rgba(0, 0, 0, 0.72);
         line-height: 1.7;
-        border-left: 1px solid rgba(255, 255, 0, .3)
+        border-left: 1px solid rgba(255, 255, 0, .3);
+        float :right;
       }
 
       h2[data-v-0020ee1f] {
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        margin-left: 50%
       }
 
       .social-links[data-v-0020ee1f] {
@@ -2534,6 +2538,15 @@
       }
 
       @media screen and (max-width:1200px) {
+        #waifu{
+          display:none;
+        }
+        .about[data-v-0020ee1f] {
+          float: none !important;
+        }
+        h2[data-v-0020ee1f]{
+          margin-left: 0px !important;
+        }
         section[data-v-0020ee1f] {
           padding: 8vmin;
           height: auto
@@ -2957,6 +2970,15 @@
       }
 
       @media screen and (max-width:1000px) {
+        #waifu{
+          display:none;
+        }
+        .about[data-v-0020ee1f] {
+          float: none !important;
+        }
+        h2[data-v-0020ee1f]{
+          margin-left: 0px !important;
+        }
         section[data-v-565688c0] {
           padding: 8vmin;
           display: -webkit-box;
@@ -3376,6 +3398,7 @@
         opacity: .7
       }
     </style>
+    
   </head>
   <body data-n-head="">
   <canvas id="canvas" style="position: absolute; left:0; z-index:-1;"></canvas>
@@ -3412,8 +3435,7 @@
             <section data-v-0020ee1f>
               <h2 id="about" name="about" data-v-0020ee1f>About Me</h2>
               <div class="about" data-v-0020ee1f>
-                
-                <p data-v-0020ee1f> Hii!!!, I am JAYESH KAITHWAS a Web Developer from India. I love working with computers and learning about new tech stuff. I started by making a simple computer program that said "Hello World," and I've been hooked on coding ever since. I'm always trying to learn more, whether it's a new computer language or the latest cool tech things. You can check out my work on my GitHub page, and if you're as passionate about technology as I am, let's connect and explore the world of innovation together. Don't hesitate to reach out; I look forward to our tech-filled conversations and collaborations!. Thanks for visiting my website, and I'm excited to share my love for technology with you! </p>
+                <p data-v-0020ee1f> Hii!!!, I am JAYESH KAITHWAS a Software Developer from India. I love working with computers and learning about new tech stuff. I started by making a simple computer program that said "Hello World," and I've been hooked on coding ever since. I'm always trying to learn more, whether it's a new computer language or the latest cool tech things. You can check out my work on my GitHub page, and if you're as passionate about technology as I am, let's connect and explore the world of innovation together. Don't hesitate to reach out; I look forward to our tech-filled conversations and collaborations!. Thanks for visiting my website, and I'm excited to share my love for technology with you! </p>
                 <div class="social-links" data-v-0020ee1f>
                   <a href="https://www.linkedin.com/in/jayesh-kaithwas-4a265a203" name="linkedin" data-v-0020ee1f>
                   
@@ -3441,7 +3463,7 @@
           <footer data-v-429e21cc id="contact">
           <p data-v-0020ee1f>Designed and Developed by</p>
           <br>
-          <h2 data-v-0020ee1f>Jayesh Kaithwas</h2>
+          <h2 data-v-0020ee1f style="margin-left: 0%;">Jayesh Kaithwas</h2>
           <hr data-v-429e21cc>
             
             <div class="social-links" data-v-429e21cc>
@@ -3456,16 +3478,39 @@
   <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
 		</svg>
               </a>
+              <a href="https://t.me/j4y35h" name="gmail" target="_blank" data-v-429e21cc>
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-telegram" viewBox="0 0 32 32">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+                </svg>
+              </a>
               <a href="mailto:jayeshkaithwas1234@gmail.com" name="gmail" target="_blank" data-v-429e21cc>
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 32 32">
   <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
   <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
 		</svg>
               </a>
+              
             </div>
           </footer>
         </div>
       </div>
     </div>
+    
+    <div id="waifu" style="left: 0px;">
+      <div id="waifu-message" style="margin-bottom: 25px;"></div>
+      <div class="waifu-tool">
+          <span class="icon-next" style="display: none;"></span>
+          <span class="icon-home"></span>
+          <span class="icon-camera"></span>
+          <span class="icon-volumeup"></span>
+          <span class="icon-volumedown"></span>
+          <span class="icon-about"></span>
+          <span class="icon-cross"></span>
+      </div>
+      <canvas id="live2d2"></canvas>
+      <canvas id="live2d4"></canvas>
+  </div>
+  <script src="dist/live2d_bundle.js"></script>
+  <script async type="module" src="waifu-tips.js"></script>
   </body>
 </html>
