@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run build
+
+      # The site has inbound links to paths the old Nuxt build published.
+      # postbuild asserts they exist; this makes the failure legible in CI.
+      - name: Assert legacy URLs survived
+        run: |
+          for p in \
+            "out/index.html" \
+            "out/projects/index.html" \
+            "out/projects/Jayesh-Resume.pdf" \
+            "out/certificates/index.html" \
+            "out/certificates/certificates.html" \
+            "out/404.html"
+          do
+            [ -f "$p" ] || { echo "::error::missing $p"; exit 1; }
+          done
+          echo "all legacy paths present"
+
+      - name: Enforce initial JS budget
+        run: |
+          node -e '
+            const fs = require("fs"), zlib = require("zlib"), path = require("path");
+            const html = fs.readFileSync("out/index.html", "utf8");
+            const all = [...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m => m[1]);
+            const nomod = new Set([...html.matchAll(/<script src="([^"]+)" noModule/g)].map(m => m[1]));
+            const modern = [...new Set(all)].filter(s => !nomod.has(s));
+            let total = 0;
+            for (const s of modern) {
+              const p = path.join("out", s);
+              if (fs.existsSync(p)) total += zlib.gzipSync(fs.readFileSync(p)).length;
+            }
+            const kb = total / 1024, budget = 150;
+            console.log(`initial JS: ${kb.toFixed(1)}K gz (budget ${budget}K)`);
+            if (kb > budget) {
+              console.error(`::error::initial JS budget exceeded by ${(kb - budget).toFixed(1)}K`);
+              process.exit(1);
+            }
+          '
+
+      - name: Assert no third-party network calls
+        run: |
+          # A security practitioner's site should make zero third-party
+          # requests. The vendored Live2D widget fetched idle quotes from four
+          # Chinese APIs before it was stripped; this stops them coming back.
+          #
+          # Matches fetch()/XHR call sites rather than every URL string: the
+          # bundle also contains inert links (its own EULA, a get.webgl.org
+          # link in a WebGL-unavailable error message) that are never requested.
+          hits=$(grep -rEoh "(fetch|open)\s*\(\s*['\"]https?://[^'\"]+" out/live2d/*.js || true)
+          if [ -n "$hits" ]; then
+            echo "::error::outbound call reintroduced into the live2d widget:"
+            echo "$hits"
+            exit 1
+          fi
+          echo "live2d widget: no outbound third-party calls"

@@ -1,0 +1,54 @@
+<Split
+  before={{
+    title: "Asking a department for its numbers",
+    items: [
+      "Ping the team that owns the tool",
+      "Wait for someone to export it",
+      "Reconcile it against another export",
+      "Numbers that disagree, and no way to say why",
+    ],
+  }}
+  after={{
+    title: "Now",
+    items: [
+      "Operators log activity, not numbers",
+      "Every rate and total is derived",
+      "One layout per department, same engine",
+      "Closing a month updates the year view",
+    ],
+  }}
+/>
+
+## Four departments, one pattern
+
+<Flow
+  caption="The operator's only job is the leftmost box. Everything to the right of it is a formula, which is why the numbers can't drift between two people's spreadsheets."
+  steps={[
+    { label: "Log the activity", note: "dials, spend, demos, cash", kind: "human" },
+    { label: "Derive the rates", note: "show rate, CPL, close rate" },
+    { label: "Roll up the month", note: "actual against target" },
+    { label: "Roll up the year", note: "reads through from the months" },
+  ]}
+/>
+
+## The views
+
+<Shots
+  shots={[
+    { image: "kpi-executive-month", alt: "Executive month view: metrics by week, monthly actual against target, and a status column colour-coded from the variance", caption: "The executive month. Weekly entry on the left, actual against target on the right, and a status column that colours itself from the variance — so the eye lands on the two red rows, not the forty black ones.", sampleData: true },
+    { image: "kpi-year-roll-up", alt: "Annual roll-up: goal and actual columns for each month across every tracked metric", caption: "The year. Every cell reads through from a month tab, so closing a month updates this with no re-entry.", sampleData: true },
+    { image: "kpi-sales-team", alt: "Sales dashboard: headline tiles, two trend charts, and a monthly funnel from scheduled calls to cash collected", caption: "Sales. Tiles and trend charts driven off the same funnel table underneath them — scheduled calls through to cash collected.", sampleData: true },
+    { image: "kpi-acquisition", alt: "Paid acquisition dashboard: monthly ad spend, leads, cost per lead, intro calls booked and show rate", caption: "Paid acquisition. Spend and lead volume aggregate out of the raw ad and call exports; cost per lead, DQ rate and show rate are all derived from them.", sampleData: true },
+    { image: "kpi-call-centre", alt: "Call centre funnel by month: dials, conversations, demos booked, show rate and closes", caption: "The call centre, month by month — dials through to cash, with the conversion rate at every step.", sampleData: true },
+  ]}
+/>
+
+<Notes
+  title="Why it holds"
+  items={[
+    { head: "One number, one owner", body: "Each figure is entered in exactly one place. Everything else references it." },
+    { head: "Targets live beside actuals", body: "A number with no target is trivia. The status colour comes from the gap between them." },
+    { head: "Empty months stay empty", body: "A year view that shows zeros for months that haven't happened teaches people to ignore it." },
+    { head: "Shown with sample data", body: "The live instances hold client revenue. Every screenshot here is the same build filled with made-up figures." },
+  ]}
+/>

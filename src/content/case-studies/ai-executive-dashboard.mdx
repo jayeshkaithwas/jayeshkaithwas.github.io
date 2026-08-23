@@ -1,0 +1,82 @@
+<Split
+  before={{
+    title: "Asking how last week went",
+    items: [
+      "Export from the CRM",
+      "Pull calling-platform stats separately",
+      "A third person reconciles the two",
+      "Answer arrives Wednesday, about Monday",
+      "Four tools, each holding a quarter of the truth",
+    ],
+  }}
+  after={{
+    title: "Now",
+    items: [
+      "One pipeline every view reads from",
+      "A metric means the same thing everywhere",
+      "Department heads stop pinging each other",
+      "Current when the question is asked",
+      "Ask it in Slack and get an answer",
+    ],
+  }}
+/>
+
+## What it looks like
+
+<Shots
+  shots={[
+    { image: "exec-ceo-dashboard", alt: "CEO dashboard: KPI tiles across the top, then per-department metric tables with this week against target, an owner and a source for every number", caption: "The meta tracker. Two to three KPIs per department, this week against target — and every number carries an owner and the tracker it came from, so a red cell has somewhere to go." },
+    { image: "exec-clients", alt: "Client management: account cards showing retainer, cost per lead, show rate, health status and open requests", caption: "Every account in one place — what it pays, how delivery is going, and the last 30 days of numbers." },
+    { image: "exec-fulfillment", alt: "Fulfillment overview: pipeline by status, workload by owner, and busiest accounts", caption: "Where delivery stands right now. Pipeline by status on the left, workload per person in the middle — the view that stops work quietly piling on one owner." },
+    { image: "exec-board", alt: "Fulfillment board: a kanban of client requests across intake, scoping, in progress, client review and blocked", caption: "The same requests as a board. Every move between columns is written to the request's history." },
+  ]}
+/>
+
+## How it fits together
+
+<Flow
+  caption="Unify first, visualise second. Everything downstream reads the pipeline rather than the source tools, which is what stops the same metric meaning two different things in two different views."
+  steps={[
+    { label: "Four source systems", note: "CRM · calling · Slack · internal tools" },
+    { label: "One pipeline", note: "cross-platform APIs, normalised" },
+    { label: "LLM layer", note: "reads the pipeline, explains it" },
+    { label: "Four department views", note: "and reporting that writes itself" },
+    { label: "Ask in Slack", note: "operators state intent", kind: "human" },
+  ]}
+/>
+
+## The data underneath
+
+<Shots
+  cols={2}
+  shots={[
+    { image: "exec-marketing", alt: "Marketing tracker: spend, leads, cost per lead, qualified, booked and show rate per client", caption: "Cost per lead and cost per booking, per client, per day. What you zoom into when the CEO view turns red." },
+    { image: "exec-sales", alt: "Sales tracker: setter and closer metrics per person per week, dials through to cash collected", caption: "Per person, per week — dials through to cash. Where a show-rate problem gets a name." },
+    { image: "exec-retention", alt: "Retention tracker: churn, upsells, referrals and reviews with a reason attached to each event", caption: "Every churn needs a reason attached. Retention is cheaper than acquisition." },
+    { image: "exec-goals", alt: "Quarter goals: objectives with key results, each with a start, a target, an owner and progress measured from the start", caption: "Progress measured from where the number started, not from zero." },
+  ]}
+/>
+
+## The agent layer underneath
+
+<Flow
+  caption="An operator states an intent; the routing and execution happen without anyone shepherding each step."
+  steps={[
+    { label: "Intent", note: "stated in plain language", kind: "human" },
+    { label: "Claude Code", note: "routes it to the right agent" },
+    { label: "Hermes Agent SDK", note: "executes autonomously" },
+    { label: "Result", note: "back in the channel it started in" },
+  ]}
+/>
+
+<Notes
+  title="What it changed"
+  items={[
+    { head: "4 departments, one interface", body: "Call Center, Marketing, Sales, Fulfillment — each sees its own slice of the same pipeline." },
+    { head: "Real-time, not assembled", body: "Replaces a weekly export-and-reconcile cycle that always described last week." },
+    { head: "Reporting writes itself", body: "The recurring manual assembly is gone, not faster." },
+    { head: "Slack is the interface", body: "Agents and custom skills run where the team already is, rather than behind another login." },
+  ]}
+/>
+
+> Code and screenshots are under NDA. The architecture and the outcomes are what I can show.

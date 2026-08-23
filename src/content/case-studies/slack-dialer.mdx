@@ -1,0 +1,73 @@
+<Split
+  before={{
+    title: "How calling worked",
+    items: [
+      "Callers worked from lists and memory",
+      "No record that an attempt happened",
+      "The same lead rung twice in an hour",
+      "Or forgotten for a week",
+      "Nobody knew whose clinic was whose",
+    ],
+  }}
+  after={{
+    title: "Now",
+    items: [
+      "One ordered queue per caller",
+      "Every dial, outcome and note written back to the CRM",
+      "A task is handed to exactly one person",
+      "Cadence decides if and when a lead returns",
+      "Dialled from the browser — no alt-tabbing mid-call",
+    ],
+  }}
+/>
+
+## How a lead becomes a call
+
+<Flow
+  caption="The caller's only decision is the outcome. Ordering, ownership and whether a lead comes back are all decided by the queue — which is the point: a caller who has to remember who to ring next will get it wrong by Thursday."
+  steps={[
+    { label: "Lead lands in the CRM", note: "raises an event" },
+    { label: "Queue builds a task", note: "with a reason and a cadence" },
+    { label: "Assigned to one caller", note: "whoever owns that clinic" },
+    { label: "Dial in the browser", note: "softphone, no handset", kind: "human" },
+    { label: "Pick an outcome", note: "re-queues or completes the cycle", kind: "human" },
+  ]}
+/>
+
+## It started in Slack
+
+<Shots
+  shots={[
+    { image: "dialer-slack", alt: "Slack app: a lead card posted into a channel with name, clinic, email, phone and source, plus Open in CRM, Knowledge Base and Dial Now buttons, a notes field and an outcome picker", caption: "The first version. A lead arrives as a Slack message with the CRM links, a notes box and an outcome picker attached — enough to prove the loop, but Slack sets the ceiling on what a call screen can be." },
+  ]}
+/>
+
+## Then it became the screen
+
+<Shots
+  shots={[
+    { image: "dialer-queue", alt: "Queue screen: lead card with a multi-number picker, appointment, attempt counter and CRM deep links on the left, disposition panel on the right", caption: "One screen does the whole job. Lead on the left, disposition on the right, and every number on file one tap from dialling — the primary badged so nobody guesses." },
+    { image: "dialer-lead", alt: "A new lead with no appointment, showing the clinic knowledge base inline: dialer number, consult fee, UPI, per-site front desk and treatment pricing, plus previous call notes", caption: "The clinic's knowledge base sits under the lead, so a caller who gets asked about price, timings or location has the answer without leaving the call. Previous notes are right there too." },
+    { image: "dialer-dashboard", alt: "Dialer dashboard: queue depth, calls in progress, completed, inbound, dials, connected, booked and talk time, with a connect-rate breakdown by cadence attempt", caption: "The dashboard answers the only two questions worth asking: is the queue moving, and does calling a lead a fourth time still connect?" },
+  ]}
+/>
+
+<Notes
+  title="What the numbers were"
+  items={[
+    { head: "7 clinics, 3 callers", body: "One queue each, and a task is never offered to two people." },
+    { head: "3,180 dials · 3,077 logged", body: "The gap is the point — an unlogged call is one that has to be made again." },
+    { head: "862 leads cached", body: "With 293 ready to call at any moment." },
+    { head: "Connect rate by attempt", body: "Tracked per cadence call, so the cadence is set from data rather than superstition." },
+  ]}
+/>
+
+<Notes
+  title="Decisions worth defending"
+  items={[
+    { head: "Deliberately not a product", body: "The calling layer rides the telephony vendor's undocumented softphone endpoints. Fine for our own callers; a liability to resell." },
+    { head: "A section, not an app", body: "It lives inside the internal HQ tool. One login, one permission model, one place people already are." },
+    { head: "The queue owns the cadence", body: "Outcome in, next attempt out. Callers never schedule their own follow-ups." },
+    { head: "Outcome unlocks after the call", body: "You cannot disposition a call you did not place." },
+  ]}
+/>

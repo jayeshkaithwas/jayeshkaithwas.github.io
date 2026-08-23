@@ -1,0 +1,102 @@
+{
+  "dialer-dashboard": {
+    "src": "/media/projects/dialer-dashboard.webp",
+    "width": 1584,
+    "height": 780
+  },
+  "dialer-lead": {
+    "src": "/media/projects/dialer-lead.webp",
+    "width": 1058,
+    "height": 496
+  },
+  "dialer-queue": {
+    "src": "/media/projects/dialer-queue.webp",
+    "width": 1058,
+    "height": 496
+  },
+  "dialer-slack": {
+    "src": "/media/projects/dialer-slack.webp",
+    "width": 1160,
+    "height": 800
+  },
+  "exec-board": {
+    "src": "/media/projects/exec-board.webp",
+    "width": 1581,
+    "height": 773
+  },
+  "exec-ceo-dashboard": {
+    "src": "/media/projects/exec-ceo-dashboard.webp",
+    "width": 1581,
+    "height": 773
+  },
+  "exec-clients": {
+    "src": "/media/projects/exec-clients.webp",
+    "width": 1581,
+    "height": 773
+  },
+  "exec-fulfillment": {
+    "src": "/media/projects/exec-fulfillment.webp",
+    "width": 1581,
+    "height": 773
+  },
+  "exec-goals": {
+    "src": "/media/projects/exec-goals.webp",
+    "width": 1581,
+    "height": 773
+  },
+  "exec-marketing": {
+    "src": "/media/projects/exec-marketing.webp",
+    "width": 1581,
+    "height": 773
+  },
+  "exec-retention": {
+    "src": "/media/projects/exec-retention.webp",
+    "width": 1581,
+    "height": 773
+  },
+  "exec-sales": {
+    "src": "/media/projects/exec-sales.webp",
+    "width": 1581,
+    "height": 773
+  },
+  "kpi-acquisition": {
+    "src": "/media/projects/kpi-acquisition.webp",
+    "width": 1508,
+    "height": 569
+  },
+  "kpi-call-centre": {
+    "src": "/media/projects/kpi-call-centre.webp",
+    "width": 1508,
+    "height": 361
+  },
+  "kpi-executive-month": {
+    "src": "/media/projects/kpi-executive-month.webp",
+    "width": 1508,
+    "height": 569
+  },
+  "kpi-sales-team": {
+    "src": "/media/projects/kpi-sales-team.webp",
+    "width": 1508,
+    "height": 569
+  },
+  "kpi-year-roll-up": {
+    "src": "/media/projects/kpi-year-roll-up.webp",
+    "width": 1508,
+    "height": 569
+  },
+  "onboarding-chat-1": {
+    "src": "/media/projects/onboarding-chat-1.webp",
+    "width": 1052,
+    "height": 784
+  },
+  "onboarding-chat-2": {
+    "src": "/media/projects/onboarding-chat-2.webp",
+    "width": 1050,
+    "height": 723
+  },
+  "visafill-prototype": {
+    "src": "/media/projects/visafill-prototype.webp",
+    "width": 1419,
+    "height": 745
+  }
+}

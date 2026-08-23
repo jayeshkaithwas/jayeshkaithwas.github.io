@@ -1,0 +1,44 @@
+<Split
+  before={{
+    title: "Staying current",
+    items: [
+      "Dozens of sources, heavy overlap",
+      "Most items irrelevant to any one reader",
+      "Headlines written to be clicked",
+      "~30 minutes a day of skimming",
+      "Most of it discarded",
+    ],
+  }}
+  after={{
+    title: "Now",
+    items: [
+      "One dashboard, categorised",
+      "Summary first, link only if it earns one",
+      "Runs on a schedule, unattended",
+      "Read in the time the skimming took",
+    ],
+  }}
+/>
+
+## Three stages, no human in any of them
+
+<Flow
+  caption="A pipeline problem wearing a reading-habit costume. The summary is the product — the link is there if the summary earns a click."
+  steps={[
+    { label: "Fetch", note: "n8n, on a schedule, with retries" },
+    { label: "Categorise", note: "browsable, not a chronological firehose" },
+    { label: "Summarise", note: "Gemini condenses each item" },
+    { label: "Dashboard", note: "the day's news, compressed" },
+  ]}
+/>
+
+<Notes
+  title="Why a workflow layer, not a cron job and a script"
+  items={[
+    { head: "Sources change constantly", body: "Adding or re-weighting one shouldn't be a deploy." },
+    { head: "Failure is normal", body: "Feeds go down and APIs rate-limit. Retry and error handling are built in, not reimplemented." },
+    { head: "It stays legible", body: "The pipeline reads as a diagram, which matters when you come back to it in three months." },
+  ]}
+/>
+
+Live at [news-flow-liard.vercel.app](https://news-flow-liard.vercel.app/).

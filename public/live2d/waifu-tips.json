@@ -1,0 +1,204 @@
+{
+  "waifu": {
+    "console_open_msg": [
+      "Console open. He'd approve — that's usually the first thing he does too."
+    ],
+    "copy_message": [
+      "Copied. Attribution is a courtesy, not a licence term. Mostly."
+    ],
+    "screenshot_message": [
+      "Capture taken."
+    ],
+    "hidden_message": [
+      "Process suspended. Reload to respawn me."
+    ],
+    "load_rand_textures": [
+      "There is only one of me here."
+    ],
+    "daemon_idle": [
+      "I am daemon.miku. PID 0421. I have been running since he wrote the first workflow.",
+      "He builds processes that run unattended. I am one of them.",
+      "One hundred workflows in production. He checks maybe three of them.",
+      "Eighty percent of the manual work is gone. The other twenty percent is judgement.",
+      "Claude routes the task. Hermes executes it. Neither of them sleeps either.",
+      "He holds CEH, CAP and CNSP. He knows exactly how I could be abused.",
+      "This page makes no third-party requests. He removed the ones that did.",
+      "Fifty to sixty visa applications a day, and not one mistyped passport number.",
+      "Ask him about the boring problem you keep doing by hand.",
+      "Vadodara, Gujarat. Two hours ahead of nothing in particular.",
+      "The client code is sealed. The outcomes are not.",
+      "A daemon is a process nobody watches. Also a spirit attached to a person. Both apply."
+    ],
+    "hour_tips": {
+      "t5-7": [
+        "Early. The workflows ran overnight without either of us."
+      ],
+      "t7-11": [
+        "Morning. Somewhere a pipeline is firing on schedule."
+      ],
+      "t11-14": [
+        "Midday. Good time to read the case studies properly."
+      ],
+      "t14-17": [
+        "Afternoon. This is when the dashboards get interesting."
+      ],
+      "t17-19": [
+        "Evening. Most of what he built is still running."
+      ],
+      "t19-21": [
+        "Good evening. Take your time — the scroll is long."
+      ],
+      "t21-23": [
+        "Late. Background processes do not mind the hour."
+      ],
+      "t23-5": [
+        "It is very late. So is he, usually."
+      ],
+      "default": [
+        "Running."
+      ]
+    },
+    "model_message": {},
+    "hitokoto_api_message": {},
+    "welcome": [
+      "daemon.miku, PID 0421. I have been running since before you arrived.",
+      "He is the one who wrote me. I am the one still running.",
+      "Background process, foreground opinions. Scroll when ready."
+    ]
+  },
+  "mouseover": [
+    {
+      "selector": "a[href$='Jayesh-Resume.pdf']",
+      "text": [
+        "The PDF. Three pages, no narrative, straight to the facts."
+      ]
+    },
+    {
+      "selector": "#ignition",
+      "text": [
+        "0x01. This is where he starts."
+      ]
+    },
+    {
+      "selector": "#identity",
+      "text": [
+        "Agents, systems, security. Everything here is downstream of those three."
+      ]
+    },
+    {
+      "selector": "#deployments",
+      "text": [
+        "Three roles. One still marked active — that one is current."
+      ]
+    },
+    {
+      "selector": "#workshop",
+      "text": [
+        "Client systems. Under NDA, so you get the outcomes and not the source."
+      ]
+    },
+    {
+      "selector": "#artifacts",
+      "text": [
+        "These ones you can actually read the code of."
+      ]
+    },
+    {
+      "selector": "#arsenal",
+      "text": [
+        "Tools. Hover one and it will tell you why it is here."
+      ]
+    },
+    {
+      "selector": "#credentials",
+      "text": [
+        "Twenty-six certificates. He shows the dates, including the lapsed ones."
+      ]
+    },
+    {
+      "selector": "#lab",
+      "text": [
+        "HackLab. This is where he breaks things deliberately."
+      ]
+    },
+    {
+      "selector": "#contact",
+      "text": [
+        "End of process. The address is real and he reads it."
+      ]
+    },
+    {
+      "selector": "a[href*='ai-executive-dashboard']",
+      "text": [
+        "Four departments, one interface. The CEO stopped asking for weekly exports."
+      ]
+    },
+    {
+      "selector": "a[href*='visa-form-autofill']",
+      "text": [
+        "Forty minutes of government forms, compiled down to seconds."
+      ]
+    },
+    {
+      "selector": "a[href*='newsflow']",
+      "text": [
+        "It reads the tech news so neither of us has to."
+      ]
+    },
+    {
+      "selector": "a[href*='github.com']",
+      "text": [
+        "Source. Go and look."
+      ]
+    },
+    {
+      "selector": "a[href*='linkedin.com']",
+      "text": [
+        "The professional face of all this."
+      ]
+    },
+    {
+      "selector": "a[href*='t.me/']",
+      "text": [
+        "Telegram. Faster than email, usually."
+      ]
+    },
+    {
+      "selector": "a[href^='mailto:']",
+      "text": [
+        "Mail him. He answers."
+      ]
+    },
+    {
+      "selector": "a[href*='hacklab']",
+      "text": [
+        "Notes, CTF write-ups, and things he has taken apart."
+      ]
+    },
+    {
+      "selector": "button",
+      "text": [
+        "Go on."
+      ]
+    }
+  ],
+  "click": [
+    {
+      "selector": "#ignition h1",
+      "text": [
+        "Jayesh Kaithwas. He wrote me, and then he wrote the site around me.",
+        "Yes, that is his real name. No, I will not do a voice."
+      ]
+    },
+    {
+      "selector": ".waifu #live2d",
+      "text": [
+        "Still running.",
+        "I am a background process. You are the interrupt.",
+        "There is a close button if you would rather read in peace.",
+        "He kept me through a full rewrite. Make of that what you will."
+      ]
+    }
+  ],
+  "seasons": []
+}

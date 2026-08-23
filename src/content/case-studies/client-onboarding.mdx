@@ -1,0 +1,104 @@
+<Split
+  before={{
+    items: [
+      "A web form most clients never filled in",
+      "An external workflow on someone else's infrastructure",
+      "Answers copied between spreadsheets by hand",
+      "~20 setup steps on a checklist",
+      "No way to tell which steps had already run",
+    ],
+  }}
+  after={{
+    items: [
+      "A conversation on WhatsApp, where clients already are",
+      "Native code in our own deployed container",
+      "One database as the source of truth",
+      "14 steps, all recorded",
+      "A ledger — so a retry re-runs only what failed",
+    ],
+  }}
+/>
+
+## How it runs
+
+<Flow
+  caption="The model writes language; Python owns state — it decides when the interview is done and what the client is asked to confirm. Everything left of the approval is reversible: the first write anyone else can see happens after a person clicks."
+  steps={[
+    { label: "Slack command", note: "one line, by a named person", kind: "human" },
+    { label: "Interview on WhatsApp", note: "until a validator says nothing is missing", loop: true },
+    { label: "Review card", note: "approve, or cancel", kind: "human" },
+    { label: "Provisioning", note: "14 steps · 112 seconds", },
+    { label: "Handoffs", note: "4 asks, to the people who own them", kind: "human" },
+  ]}
+/>
+
+## The interview, as the client sees it
+
+<Shots
+  cols={2}
+  shots={[
+    { image: "onboarding-chat-1", alt: "WhatsApp: the agent opens with what it will ask and how long it takes, then begins collecting the business name and owner", caption: "The opening. It says what it will ask, how long it takes, and that there is no rush — then starts. No form, no link, no login." },
+    { image: "onboarding-chat-2", alt: "WhatsApp: the agent collects email, main phone number and address, answering a question about why it needs the number and accepting a deferral on fees", caption: "Mid-interview. Asked why it wants the number, it explains rather than repeating the question; told \"will answer this later\", it moves on and comes back." },
+  ]}
+/>
+
+## One run, fourteen steps
+
+<StepGrid
+  caption="Every step short-circuits if the ledger already has it as ok. On the first live run one step failed on a type error; the fix went in, approve was pressed again, and only that step re-ran."
+  steps={[
+    { label: "CRM account", kind: "critical" },
+    { label: "client record", kind: "critical" },
+    { label: "knowledge base", kind: "critical" },
+    { label: "shared drive" },
+    { label: "chat channels" },
+    { label: "wire channel IDs" },
+    { label: "API token" },
+    { label: "CRM fields" },
+    { label: "calendars" },
+    { label: "dialer list" },
+    { label: "caller access" },
+    { label: "workspace" },
+    { label: "chat groups" },
+    { label: "handoffs", kind: "human" },
+  ]}
+/>
+
+## Keeping strangers out
+
+<Flow
+  caption="The agent's number is a real company line carrying hundreds of human conversations, and every inbound message hits the webhook. No live session for that number means no model call at all — the check sits before any spend."
+  steps={[
+    { label: "Any inbound message", note: "patients, vendors, staff, clients" },
+    { label: "Resolve the sender", note: "WhatsApp now hides the phone number" },
+    { label: "Enrolled by a person?", note: "no session → recorded and ignored", kind: "human" },
+    { label: "Interview", note: "only numbers someone put on the list" },
+  ]}
+/>
+
+<Notes
+  items={[
+    { head: "A vendor API gated without saying so", body: "User endpoints 403, behind a validation error about a different field. Those paths go through browser automation." },
+    { head: "A plural field that isn't", body: "Opening hours are accepted one day at a time; the same day sent twice is silently deduped, halving a doctor's availability." },
+    { head: "₹1.5 lakh is not ₹15", body: "Stripping non-digits would have written a ₹150,000 budget as ₹15. Lakh, crore and Indian grouping are parsed explicitly." },
+    { head: "Photos arrive unasked", body: "Filing every image as the logo made one client's payment QR their brand mark. Routing now uses what was last asked for." },
+    { head: "Schedules arrive as prose", body: "\"Mon to Fri 10 to 2\" is re-derived in Python. Anything that won't parse is flagged, never guessed." },
+    { head: "Timeouts and edge rules", body: "Calendars needed 120s, an older API version, and a non-default user-agent to get past the vendor's edge." },
+  ]}
+/>
+
+## Where it honestly stands
+
+<Notes
+  title="Proven, and not"
+  items={[
+    { head: "112 seconds", body: "Account, client record, knowledge base, drive, three channels, token and 18 CRM fields — measured on the first live run." },
+    { head: "12 manual steps removed", body: "Of the old checklist. Four handoffs and the final smoke test are still deliberately a person's job." },
+    { head: "Sample size is one", body: "Every timing and failure mode above comes from a single real client." },
+    { head: "One path unproven", body: "No client has yet dictated a schedule over WhatsApp and had a calendar come out. The chain exists; it hasn't been exercised." },
+  ]}
+/>
+
+> The interesting part isn't that an agent can hold a conversation. It's that the conversation
+> decides almost nothing — a validator says when it's done, a person says whether it runs, and a
+> ledger says what a retry may touch.

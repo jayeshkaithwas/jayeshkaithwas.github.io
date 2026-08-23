@@ -1,0 +1,41 @@
+{
+  "name": "jayeshkaithwas.github.io",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Personal site of Jayesh Kaithwas — AI Automation Specialist & Backend Engineer.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/postbuild.mjs",
+    "preview": "npm run build && npx --yes serve out -p 4000",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "3.1.1",
+    "@mdx-js/react": "3.1.1",
+    "@next/mdx": "16.3.1",
+    "clsx": "2.1.1",
+    "lenis": "1.3.26",
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "rehype-slug": "6.0.0",
+    "remark-gfm": "4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/mdx": "2.0.14",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
+    "sharp": "0.35.3",
+    "tailwindcss": "^4",
+    "typescript": "5.9.3"
+  }
+}

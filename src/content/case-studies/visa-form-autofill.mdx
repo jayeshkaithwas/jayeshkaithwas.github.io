@@ -1,0 +1,62 @@
+<Split
+  before={{
+    title: "Per application",
+    items: [
+      "Read a value off a PDF",
+      "Type it into a government form",
+      "A few hundred times",
+      "Across pages that time out and lose state",
+      "~40 minutes, and attention degrading all the way",
+    ],
+  }}
+  after={{
+    title: "Now",
+    items: [
+      "PDFs parsed once into one record",
+      "Fields filled the way the page expects",
+      "Operator reviews, then submits",
+      "Seconds",
+      "The hundredth passport number is as accurate as the first",
+    ],
+  }}
+/>
+
+## How it runs
+
+<Flow
+  caption="The extension removes the typing, not the judgement — an operator still reviews every application before it is submitted."
+  steps={[
+    { label: "Client PDFs", note: "passports, statements, letters" },
+    { label: "Parse", note: "one structured record per applicant" },
+    { label: "Fill", note: "paced to the page, not to the machine" },
+    { label: "Review", note: "operator checks before submit", kind: "human" },
+  ]}
+/>
+
+<Shots
+  shots={[
+    { image: "visafill-prototype", alt: "The prototype: a US visa form on the left, the extension panel on the right showing uploaded documents, an extracted JSON profile, and a per-field mapping log reading 16 of 16 filled", caption: "An early prototype — the shipped version can't be shown. Documents go in on the right, come out as a structured profile, and every field the extension writes is logged with the profile key it came from. Applicant details are redacted here; the two unmapped rows at the top are the extension refusing to guess." },
+  ]}
+/>
+
+<Notes
+  items={[
+    { head: "Government portals aren't built for this", body: "Multi-page flows reset if you move too fast, so the fill is paced to the page." },
+    { head: "Half the fields don't exist yet", body: "Many render only once an earlier answer is made. A single \"fill everything\" pass finds the other half." },
+    { head: "Setting .value is ignored", body: "Validation fires on native events, so every write has to look like a keystroke." },
+    { head: "Layouts vary by authority", body: "The same field appears in different places, so extraction has to tolerate the drift." },
+  ]}
+/>
+
+<Notes
+  title="Outcome"
+  items={[
+    { head: "90%+ manual entry removed", body: "Per application, on a 50–60/day operation." },
+    { head: "Minutes → seconds", body: "Per-application processing time." },
+    { head: "~0 transcription errors", body: "Across thousands of monthly submissions." },
+    { head: "No added headcount", body: "The consultancy kept its throughput without hiring to do it." },
+  ]}
+/>
+
+> The measure of this one isn't that it's clever. It's that the failure mode it removed — a
+> mistyped digit on someone's visa application — was the expensive one.
